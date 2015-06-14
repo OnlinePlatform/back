@@ -11,7 +11,7 @@
 var fp = new FlexPaperViewer(  
 'FlexPaperViewer',    /* 对应FlexPaperViewer.swf文件*/  
 'viewerPlaceHolder', { config : {  
-SwfFile : "http://127.0.0.1{$reference['swf_url']}",
+SwfFile : "http://127.0.0.1{$course_content[content].swf_url}",
 Scale : 0.6,  
 ZoomTransition : 'easeOut',  
 ZoomTime : 0.5,  

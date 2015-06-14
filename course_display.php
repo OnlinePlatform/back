@@ -9,7 +9,8 @@
 		$res_courses = $mysqli->query("call get_stu_classes('".$_SESSION['userid']."')");
 		$courses = $res_courses->fetch_all(MYSQLI_ASSOC);
 		$smarty->assign('courses', $courses);
-		$smarty->display('course_display.html');
+//		$smarty->display('course_display.html');
+		$smarty->display('major.html');
 
 	
 	}else{

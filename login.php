@@ -35,7 +35,8 @@
                 $_SESSION['username'] = $username;
                 $_SESSION['userid'] = $user['id'];
                 $_SESSION['usertype'] = $_POST['usertype'];
-                echo "<a href='course_display.php?'>我的课程</a>";    
+//                echo "<a href='course_display.php?'>我的课程</a>";    
+                header("Location: http://127.0.0.1/webDemo1/course_display.php");
             }
             else{
                 echo "<script>alert('login failed')</script>";//"<script>$('input').append('<span>hello  dffdfdfd</span>')</script>"

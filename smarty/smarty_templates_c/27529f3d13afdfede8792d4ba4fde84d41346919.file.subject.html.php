@@ -1,0 +1,436 @@
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-14 15:39:55
+         compiled from ".\smarty\templates\subject.html" */ ?>
+<?php /*%%SmartyHeaderCode:13157557d817ac12026-20583986%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '27529f3d13afdfede8792d4ba4fde84d41346919' => 
+    array (
+      0 => '.\\smarty\\templates\\subject.html',
+      1 => 1434296385,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '13157557d817ac12026-20583986',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_557d817ad004d7_85226054',
+  'variables' => 
+  array (
+    'course_content' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_557d817ad004d7_85226054')) {function content_557d817ad004d7_85226054($_smarty_tpl) {?><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--     <link rel="icon" href="../../favicon.ico">
+ --><title>课程</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/subject.css" rel="stylesheet">
+    <?php echo '<script'; ?>
+ type="text/javascript" src="js/flexpaper_flash.js"><?php echo '</script'; ?>
+> 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"><?php echo '</script'; ?>
+>
+      <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"><?php echo '</script'; ?>
+>
+    <![endif]-->
+  </head>
+  <?php echo '<script'; ?>
+ type="text/javascript">
+    function displayppt(){
+      alert("hello");
+      var holder=document.getElementById('viewerPlaceHolder');
+       alert(holder);
+      //holder.parent().style.display="";
+      alert(holder);
+    };
+  <?php echo '</script'; ?>
+>
+  <body>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <!-- <div class="navbar-header">
+          <关注 type="关注" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </关注>
+          <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        </div> -->
+        <div class="collapse navbar-collapse pull-left">
+          <ul class="nav navbar-nav">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">教学实验</a></li>
+            <li><a href="#">科研合作</a></li>
+            <li><a href="#">就业实习</a></li>
+            <li><a href="#">关于我们</a></li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <ul class="breadcrumb">
+          <li><a href="#">个人中心</a> <span class="divider"></span></li>
+          <li><a href="#">我的课程</a> <span class="divider"></span></li>
+          <li><a href="#">校内课</a> <span class="divider"></span></li>
+          <li><a href="#">C++</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
+          <div class='row  bg'>
+            <div class="col-xs-6 col-sm-4">
+              <img src="img/s0.png">
+            </div>
+            <div class="col-xs-6 col-sm-8 s-title">
+              <h3>课程简介</h3>
+              <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+            </div>
+          </div>
+          <!-- 课程详情导航条 -->
+          <div class="row">
+            <div class="col-xs-12 horizon">
+              <ul class="nav navbar-nav" id="s-nav">
+                <li><a href="#s-part1">课程信息</a></li>
+                <li><a href="#s-part2">实验</a></li>
+                <li><a href="#s-part3">参考资料</a></li>
+                <li><a href="#s-part4">讨论区</a></li>
+              </ul>
+            </div>
+          </div>
+
+         <!--  4部分内容   -->
+         <!-- s-part1 -->
+          <div>
+            <div class="row" id="s-part1">
+              <?php if ($_smarty_tpl->tpl_vars['course_content']->value!='') {?>
+              <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['content'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['content']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['name'] = 'content';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['course_content']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['step'] = 1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['content']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['total'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['loop'];
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['content']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['content']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['content']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['content']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['content']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['total']);
+?>
+                <?php if ($_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_prev']]['chap_num']==$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']&&$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_next']]['chap_num']==$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']) {?>
+                  <li>
+                    <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+</a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+" data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
+                    <a href="javascript:displayppt();" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> 
+                    <div style="position:absolute;left:10px;top:10px;display:none;" > 
+                        <a id="viewerPlaceHolder" style="width:680px;height:480px;display:block"></a> 
+                        <?php echo '<script'; ?>
+ type="text/javascript"> 
+                        var fp = new FlexPaperViewer(  
+                        'FlexPaperViewer',    /* 对应FlexPaperViewer.swf文件*/  
+                        'viewerPlaceHolder', { config : {  
+                        SwfFile : "http://127.0.0.1<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+",
+                        Scale : 0.6,  
+                        ZoomTransition : 'easeOut',  
+                        ZoomTime : 0.5,  
+                        ZoomInterval : 0.2,  
+                        FitPageOnLoad : true,  
+                        FitWidthOnLoad : true,  
+                        FullScreenAsMaxWindow : false,  
+                        ProgressiveLoading : false,  
+                        MinZoomSize : 0.2,  
+                        MaxZoomSize : 5,  
+                        SearchMatchAll : false,  
+                        InitViewMode : 'Portrait',  
+                        ViewModeToolsVisible : true,  
+                        ZoomToolsVisible : true,  
+                        NavToolsVisible : true,  
+                        CursorToolsVisible : true,  
+                        SearchToolsVisible : true,  
+                        localeChain: 'zh_CN'  
+                        }});  
+                        <?php echo '</script'; ?>
+> 
+                    </div>
+                  </li>
+
+                <?php } elseif ($_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_prev']]['chap_num']==$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']&&$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_next']]['chap_num']!=$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']) {?>
+                  <li>
+                    <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+</a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+" data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+" target="_blank" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a>
+                  </li> 
+                  </ol> 
+                  </div>
+                <?php } elseif ($_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_prev']]['chap_num']!=$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']&&$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_next']]['chap_num']==$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']) {?>
+              <div class="col-sm-12">
+                <h3 class="s-chapter">第<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']%100;?>
+章 <?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_name'];?>
+</h3>
+                <ol class="s-section">                             
+                  <li>
+                    <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+</a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+" data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+" target="_blank" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a>
+                  </li> 
+                <?php } else { ?>                  
+              <div class="col-sm-12">
+                <h3 class="s-chapter">第<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']%100;?>
+章 <?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_name'];?>
+</h3>
+                <ol class="s-section">                             
+                  <li>
+                    <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+</a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+" data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+" target="_blank" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a>
+                  </li> 
+                </ol>
+              </div>
+              <?php }?>
+              <?php endfor; endif; ?>
+              <?php }?>             
+            </div>
+
+
+            <!-- s-part2 -->
+            <div class="row hidden" id="s-part2">
+              <div class="col-sm-12">
+                <h3 class="s-chapter">第1章 SVN下载与安装实验</h3>
+                <ol class="s-section">
+                  <li>
+                    <a href="#">SVN 服务器端的安装和配置</a>
+                    <a href="#"><span class="glyphicon glyphicon-expand" aria-hidden="true"></a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="row hidden" id="s-part3">
+              <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                  <a href="#"><img src="img/subject.png" alt="课程"></a>
+                  <div class="caption">
+                    <a href="#"><h3>Python</h3></a>
+                    <p>本课程主要讲解在不同系统（Window、Linux）中搭建Python开发环境，及Eclipse配置和 Python 文件类型。</p>
+                    <p><!-- <a href="#" class="btn btn-primary" role="关注">关注</a>  --><a href="#" class="btn btn-default" role="关注">关注</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                  <a href="#"><img src="img/subject.png" alt="课程"></a>
+                  <div class="caption">
+                    <a href="#"><h3>Python</h3></a>
+                    <p>本课程主要讲解在不同系统（Window、Linux）中搭建Python开发环境，及Eclipse配置和 Python 文件类型。</p>
+                    <p><!-- <a href="#" class="btn btn-primary" role="关注">开始学习</a>  --><a href="#" class="btn btn-default" role="关注">关注</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                  <a href="#"><img src="img/subject.png" alt="课程"></a>
+                  <div class="caption">
+                    <a href="#"><h3>Python</h3></a>
+                    <p>本课程主要讲解在不同系统（Window、Linux）中搭建Python开发环境，及Eclipse配置和 Python 文件类型。</p>
+                    <p><!-- <a href="#" class="btn btn-primary" role="关注">开始学习</a>  --><a href="#" class="btn btn-default" role="关注">关注</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-3">
+                <div class="thumbnail">
+                  <a href="#"><img src="img/subject.png"></a>
+                  <div class="caption">
+                    <a href="#"><h3>Python</h3></a>
+                    <p>本课程主要讲解在不同系统（Window、Linux）中搭建Python开发环境，及Eclipse配置和 Python 文件类型。</p>
+                    <p><!-- <a href="#" class="btn btn-primary" role="关注">开始学习</a>  --><a href="#" class="btn btn-default" role="关注">关注</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row hidden" id="s-part4">
+              <div class="row">
+                <div class="col-sm-1 center">
+                    <img src="img/user.png" alt="课程"  class="user-img">
+                    <p>Amy</p>
+                </div>
+                <div class="col-sm-11 board-content">
+                  <p>你知道的太多了</p>
+                  <a class="pull-right" data-toggle="modal" href="#response">回复</a>
+                </div> 
+              </div>
+              <div class="row">
+                <div class="col-sm-1 center">
+                    <img src="img/user.png" alt="课程"  class="user-img">
+                    <p>Amy</p>
+                </div>
+                <div class="col-sm-11 board-content">
+                  <p>你知道的太多了</p>
+                  <a class="pull-right" data-toggle="modal" href="#response">回复</a>
+                </div> 
+              </div>
+              <div class="row input-board">
+                  <textarea placeholder="留个脚印"></textarea>   
+              <div class="col-sm-2 col-sm-offset-11">
+                <btton class="btn btn-info">回复</button>
+              </div>               
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times; </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                             视频名称
+                      </h4>
+                    </div>
+                    <div class="modal-body">
+                      <video class='video-style' controls>
+                        <source src='abc.mp4' type="video/mp4">
+                        <source src='abc.ogv' type='video/ogg'>
+                        <p> 浏览器不支持该视频播放，请升级浏览器</p>
+                      </video>
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                      </button>
+                      <button type="button" class="btn btn-primary">保存</button>
+                    </div> -->
+                  </div>
+                </div>
+        </div>
+
+       <!--  右侧推送 -->
+        <div class="col-xs-6 col-sm-3 pull-right" style="padding: 10px;margin-top: -10px">
+            <dl>
+              <dt>授课老师</dt>
+              <dd>
+                  <a href="#" class="figure"><img src="img/user.png">
+                  </a>
+                  <a href="#">大山</a>
+                  <p> Web前端工程师</p>
+                  <br class="clear">
+                  <p class="indent" style="margin-top: 20px;">W3CPlus创始人，目前就职于手淘。对CSS3和Sass等前端脚本语言有深入的认识和丰富的实践经验。CSS3、Sass和Drupal中国布道者，2014年出版《图解CSS3：核心技术与案例实战》。
+                  </p>
+              </dd>
+            </dl>
+            <dl>
+              <dt>课程须知</dt>
+                <dd>
+                <p class="indent">对CSS有一定的了解，才可以更好的学习本课程。</p>
+              </dd>
+            </dl>
+            <dl>
+              <dt>老师告诉你能学到什么？</dt>
+                <dd>Sass是什么？他有什么功能？</dd>
+                <dd>Sass需要什么样的环境才能顺利运行</dd>
+                <dd>Sass语法格式和CSS有什么不一样？
+                <dd>Sass要如何编译
+                <dd>你要怎么调试Sass
+                
+            </dl>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+        <div class="footer-text">
+            <p>
+                <span>关于我们</span>
+                <span>诚征英才</span>
+                <span>联系我们</span>
+                <span>服务协议</span>
+                <span>京ICP备15011063号</span>
+            </p>
+            <p>
+                Copyright 2015 GPX All Rights Reserved&nbsp;&nbsp;&nbsp;&nbsp;极派客公司&nbsp;&nbsp;&nbsp;&nbsp;版权所有&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+        </div>
+    </div>
+  </div>
+          <!-- response modal -->
+  <div class="modal fade" id="response" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                   回复
+            </h4>
+          </div>
+          <div class="modal-body">
+                  <textarea></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary">确认</button>
+          </div>
+      </div>
+    </div>
+  </div>    
+
+  <?php echo '<script'; ?>
+ src="js/jquery-1.11.1.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="js/common.js"><?php echo '</script'; ?>
+>
+  </body>
+</html>
+<?php }} ?>
