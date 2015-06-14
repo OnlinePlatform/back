@@ -6,9 +6,8 @@
 	if (isset($_SESSION['username']) && !empty($_SESSION['username'])){
 		$comment_list = array();	
 		doDB();
-		$_SESSION['subject_id'] = $_GET['subject_id'];
-		$_SESSION['course_id'] = $_GET['course_id'];
-		$res_leaf = "select * from comment where 1=1 and subject_id='".$_GET['subject_id']."' and course_id ='".$_SESSION['course_id']."' and isleaf=1 order by comment_time desc";
+		$course_id = $_GET['course_id'];
+		$res_leaf = "select * from comment where 1=1 and course_id ='".$course_id."' and isleaf=1 order by comment_time desc";
 		$res_leaf = $mysqli->query($res_leaf);
 		$leaf_list = $res_leaf->fetch_all(MYSQLI_ASSOC);
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-14 15:39:55
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-14 22:04:44
          compiled from ".\smarty\templates\subject.html" */ ?>
 <?php /*%%SmartyHeaderCode:13157557d817ac12026-20583986%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '27529f3d13afdfede8792d4ba4fde84d41346919' => 
     array (
       0 => '.\\smarty\\templates\\subject.html',
-      1 => 1434296385,
+      1 => 1434319479,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'course_content' => 0,
+    'comment_list' => 0,
+    'comments' => 0,
+    'comment' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -39,7 +42,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link href="css/subject.css" rel="stylesheet">
     <?php echo '<script'; ?>
  type="text/javascript" src="js/flexpaper_flash.js"><?php echo '</script'; ?>
-> 
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="js/demo_js.js"><?php echo '</script'; ?>
+>  
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <?php echo '<script'; ?>
@@ -57,10 +63,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       var holder=document.getElementById('viewerPlaceHolder');
        alert(holder);
       //holder.parent().style.display="";
-      alert(holder);
+      
     };
   <?php echo '</script'; ?>
 >
+
   <body>
     <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
@@ -294,28 +301,45 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
               </div>
             </div>
             <div class="row hidden" id="s-part4">
-              <div class="row">
-                <div class="col-sm-1 center">
-                    <img src="img/user.png" alt="课程"  class="user-img">
-                    <p>Amy</p>
-                </div>
-                <div class="col-sm-11 board-content">
-                  <p>你知道的太多了</p>
-                  <a class="pull-right" data-toggle="modal" href="#response">回复</a>
-                </div> 
-              </div>
-              <div class="row">
-                <div class="col-sm-1 center">
-                    <img src="img/user.png" alt="课程"  class="user-img">
-                    <p>Amy</p>
-                </div>
-                <div class="col-sm-11 board-content">
-                  <p>你知道的太多了</p>
-                  <a class="pull-right" data-toggle="modal" href="#response">回复</a>
-                </div> 
-              </div>
+              <?php if ($_smarty_tpl->tpl_vars['comment_list']->value!='') {?>
+                <?php  $_smarty_tpl->tpl_vars['comments'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['comments']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['comment_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['comments']->key => $_smarty_tpl->tpl_vars['comments']->value) {
+$_smarty_tpl->tpl_vars['comments']->_loop = true;
+?>
+
+                  <?php  $_smarty_tpl->tpl_vars['comment'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['comment']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['comments']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['comment']->key => $_smarty_tpl->tpl_vars['comment']->value) {
+$_smarty_tpl->tpl_vars['comment']->_loop = true;
+?>
+                    <?php if (count($_smarty_tpl->tpl_vars['comment']->value)==6) {?>
+                      <span><?php echo $_smarty_tpl->tpl_vars['comment']->value['name'];?>
+ | <?php echo $_smarty_tpl->tpl_vars['comment']->value['comment_time'];?>
+ 说: <?php echo $_smarty_tpl->tpl_vars['comment']->value['content'];?>
+</span>  <a class="pull-right" data-toggle="modal" href="#response"> 回复</a>
+                      <p></p>
+                      <p></p> 
+
+                    <?php } else { ?>
+                      <span><?php echo $_smarty_tpl->tpl_vars['comment']->value['name'];?>
+ | <?php echo $_smarty_tpl->tpl_vars['comment']->value['comment_time'];?>
+ 回复<?php echo $_smarty_tpl->tpl_vars['comment']->value['parent_name'];?>
+ 说: <?php echo $_smarty_tpl->tpl_vars['comment']->value['content'];?>
+</span>  <a class="pull-right" data-toggle="modal" href="#response">回复</a><br>
+
+                    <?php }?>
+                  <?php } ?>
+                <?php } ?>
+
+              <?php } else { ?>
+              <h3>暂无跟帖</h3>
+              <?php }?>
+
               <div class="row input-board">
-                  <textarea placeholder="留个脚印"></textarea>   
+                  <form name="form_reply">
+                    <textarea placeholder="留个脚印" name="content"></textarea> 
+                  </form>  
               <div class="col-sm-2 col-sm-offset-11">
                 <btton class="btn btn-info">回复</button>
               </div>               
@@ -411,12 +435,17 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
             </h4>
           </div>
           <div class="modal-body">
-                  <textarea></textarea>
+                  <form name="form_reply">
+                    <textarea name="content"></textarea>
+                  </form>
+                  
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭
             </button>
-            <button type="button" class="btn btn-primary">确认</button>
+            <button type="button" class="btn btn-primary" onclick="forum_reply(<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
+,<?php echo $_smarty_tpl->tpl_vars['comment']->value['course_id'];?>
+)">确认</button>
           </div>
       </div>
     </div>
