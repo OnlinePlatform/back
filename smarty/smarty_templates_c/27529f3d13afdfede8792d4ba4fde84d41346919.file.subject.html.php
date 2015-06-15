@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-14 22:04:44
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-15 14:00:21
          compiled from ".\smarty\templates\subject.html" */ ?>
 <?php /*%%SmartyHeaderCode:13157557d817ac12026-20583986%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '27529f3d13afdfede8792d4ba4fde84d41346919' => 
     array (
       0 => '.\\smarty\\templates\\subject.html',
-      1 => 1434319479,
+      1 => 1434376812,
       2 => 'file',
     ),
   ),
@@ -163,51 +163,71 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
                   <li>
                     <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
 </a>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+                    <a href="#<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
 " data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
-                    <a href="javascript:displayppt();" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> 
-                    <div style="position:absolute;left:10px;top:10px;display:none;" > 
-                        <a id="viewerPlaceHolder" style="width:680px;height:480px;display:block"></a> 
-                        <?php echo '<script'; ?>
- type="text/javascript"> 
-                        var fp = new FlexPaperViewer(  
-                        'FlexPaperViewer',    /* 对应FlexPaperViewer.swf文件*/  
-                        'viewerPlaceHolder', { config : {  
-                        SwfFile : "http://127.0.0.1<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
-",
-                        Scale : 0.6,  
-                        ZoomTransition : 'easeOut',  
-                        ZoomTime : 0.5,  
-                        ZoomInterval : 0.2,  
-                        FitPageOnLoad : true,  
-                        FitWidthOnLoad : true,  
-                        FullScreenAsMaxWindow : false,  
-                        ProgressiveLoading : false,  
-                        MinZoomSize : 0.2,  
-                        MaxZoomSize : 5,  
-                        SearchMatchAll : false,  
-                        InitViewMode : 'Portrait',  
-                        ViewModeToolsVisible : true,  
-                        ZoomToolsVisible : true,  
-                        NavToolsVisible : true,  
-                        CursorToolsVisible : true,  
-                        SearchToolsVisible : true,  
-                        localeChain: 'zh_CN'  
-                        }});  
-                        <?php echo '</script'; ?>
-> 
+                    <a href="file.html?http://127.0.0.1<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> 
+        <div class="modal fade" id="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
+" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times; </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                            <?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+
+                      </h4>
                     </div>
+                    <div class="modal-body">
+                      <video class='video-style' controls id="video">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type="video/mp4">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type='video/ogg'>
+                        <p> 浏览器不支持该视频播放，请升级浏览器</p>
+                      </video>
+                    </div>
+                  </div>
+                </div>
+        </div>        
                   </li>
 
                 <?php } elseif ($_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_prev']]['chap_num']==$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']&&$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_next']]['chap_num']!=$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']) {?>
                   <li>
                     <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
 </a>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+                    <a href="#<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
 " data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+                    <a href="file.html?http://127.0.0.1<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
 " target="_blank" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a>
-                  </li> 
+                  </li>
+        <div class="modal fade" id="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
+" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times; </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                            <?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+
+                      </h4>
+                    </div>
+                    <div class="modal-body">
+                      <video class='video-style' controls id="video">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type="video/mp4">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type='video/ogg'>
+                        <p> 浏览器不支持该视频播放，请升级浏览器</p>
+                      </video>
+                    </div>
+                  </div>
+                </div>
+        </div>                   
                   </ol> 
                   </div>
                 <?php } elseif ($_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_prev']]['chap_num']!=$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']&&$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index_next']]['chap_num']==$_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']) {?>
@@ -219,11 +239,36 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
                   <li>
                     <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
 </a>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+                    <a href="#<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
 " data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+                    <a href="file.html?http://127.0.0.1<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
 " target="_blank" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a>
                   </li> 
+        <div class="modal fade" id="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
+" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times; </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                            <?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+
+                      </h4>
+                    </div>
+                    <div class="modal-body">
+                      <video class='video-style' controls id="video">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type="video/mp4">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type='video/ogg'>
+                        <p> 浏览器不支持该视频播放，请升级浏览器</p>
+                      </video>
+                    </div>
+                  </div>
+                </div>
+        </div>
                 <?php } else { ?>                  
               <div class="col-sm-12">
                 <h3 class="s-chapter">第<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['chap_num']%100;?>
@@ -233,11 +278,36 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
                   <li>
                     <a href="#"><?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
 </a>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+                    <a href="#<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
 " data-toggle="modal" title="播放视频"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
+                    <a href="file.html?http://127.0.0.1<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['swf_url'];?>
 " target="_blank" title="查看PPT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a>
-                  </li> 
+                  </li>
+        <div class="modal fade" id="<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_num'];?>
+" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times; </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                            <?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['sec_name'];?>
+
+                      </h4>
+                    </div>
+                    <div class="modal-body">
+                      <video class='video-style' controls id="video">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type="video/mp4">
+                        <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
+' type='video/ogg'>
+                        <p> 浏览器不支持该视频播放，请升级浏览器</p>
+                      </video>
+                    </div>
+                  </div>
+                </div>
+        </div> 
                 </ol>
               </div>
               <?php }?>
@@ -347,32 +417,7 @@ $_smarty_tpl->tpl_vars['comment']->_loop = true;
             </div>
           </div>
         </div>
-        <div class="modal fade" id="video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" 
-               data-dismiss="modal" aria-hidden="true">
-                  &times; </button>
-                      <h4 class="modal-title" id="myModalLabel">
-                             视频名称
-                      </h4>
-                    </div>
-                    <div class="modal-body">
-                      <video class='video-style' controls>
-                        <source src='abc.mp4' type="video/mp4">
-                        <source src='abc.ogv' type='video/ogg'>
-                        <p> 浏览器不支持该视频播放，请升级浏览器</p>
-                      </video>
-                    </div>
-                    <!-- <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                      </button>
-                      <button type="button" class="btn btn-primary">保存</button>
-                    </div> -->
-                  </div>
-                </div>
-        </div>
+
 
        <!--  右侧推送 -->
         <div class="col-xs-6 col-sm-3 pull-right" style="padding: 10px;margin-top: -10px">
@@ -435,9 +480,9 @@ $_smarty_tpl->tpl_vars['comment']->_loop = true;
             </h4>
           </div>
           <div class="modal-body">
-                  <form name="form_reply">
-                    <textarea name="content"></textarea>
-                  </form>
+                  
+                    <textarea id="content" name="content"></textarea>
+   
                   
           </div>
           <div class="modal-footer">
@@ -459,6 +504,9 @@ $_smarty_tpl->tpl_vars['comment']->_loop = true;
 >
   <?php echo '<script'; ?>
  src="js/common.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="js/subject.js"><?php echo '</script'; ?>
 >
   </body>
 </html>

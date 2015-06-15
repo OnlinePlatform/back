@@ -2,6 +2,7 @@ var xmlHttp;
 
   function forum_reply(comment_id, course_id)
   { 
+    console.log(comment_id);
   xmlHttp=GetXmlHttpObject();
   if (xmlHttp==null)
    {
@@ -10,7 +11,9 @@ var xmlHttp;
    }
   var url="forum_reply.php";
   url=url+"?comment_id="+comment_id+"&course_id="+course_id;
-  var content = $("form[name=form_reply]")
+
+  var content = $("#content").val();
+  console.log('dsddd');
   xmlHttp.onreadystatechange=stateChanged();
   xmlHttp.open("POST",url,true);
   xmlHttp.send(content);
