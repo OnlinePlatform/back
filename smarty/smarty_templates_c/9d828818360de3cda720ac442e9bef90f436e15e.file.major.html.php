@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-14 13:44:11
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-16 03:42:07
          compiled from ".\smarty\templates\major.html" */ ?>
 <?php /*%%SmartyHeaderCode:287557d852b284c13-07339467%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9d828818360de3cda720ac442e9bef90f436e15e' => 
     array (
       0 => '.\\smarty\\templates\\major.html',
-      1 => 1434260755,
+      1 => 1434422287,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_557d852b34bfc5_28752203',
   'variables' => 
   array (
     'courses' => 0,
     'course' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_557d852b34bfc5_28752203',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_557d852b34bfc5_28752203')) {function content_557d852b34bfc5_28752203($_smarty_tpl) {?><?php $_smarty_tpl->smarty->loadPlugin('Smarty_Internal_Debug'); Smarty_Internal_Debug::display_debug($_smarty_tpl); ?>
 <!DOCTYPE html>
@@ -37,6 +37,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
  --><title>我的课程</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/common.css" rel="stylesheet">
+    <style>
+      .solid-height{
+        margin: 0 0 10px;
+        height: 100px;
+        overflow-y: hidden;
+      }
+    </style>
   </head>
 <body>	
 	<nav class="navbar navbar-fixed-top navbar-inverse">
@@ -103,7 +110,7 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
                     <a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
 "><h3><?php echo $_smarty_tpl->tpl_vars['course']->value['name'];?>
 </h3></a>
-                    <p><?php echo $_smarty_tpl->tpl_vars['course']->value['info'];?>
+                    <p class="indent solid-height"><?php echo $_smarty_tpl->tpl_vars['course']->value['info'];?>
 </p>
                     <p><!-- <a href="#" class="btn btn-primary" role="开始学习">开始学习</a>  --><a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
 " class="btn btn-info" role="开始学习">开始学习</a></p>
@@ -129,7 +136,7 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
                     <a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
 "><h3><?php echo $_smarty_tpl->tpl_vars['course']->value['name'];?>
 </h3></a>
-                    <p><?php echo $_smarty_tpl->tpl_vars['course']->value['info'];?>
+                    <p class="indent solid-height"><?php echo $_smarty_tpl->tpl_vars['course']->value['info'];?>
 </p>
                     <p><!-- <a href="#" class="btn btn-primary" role="开始学习">开始学习</a>  --><a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
 " class="btn btn-info" role="开始学习">开始学习</a></p>
@@ -155,7 +162,7 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
                     <a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
 "><h3><?php echo $_smarty_tpl->tpl_vars['course']->value['name'];?>
 </h3></a>
-                    <p><?php echo $_smarty_tpl->tpl_vars['course']->value['info'];?>
+                    <p class="indent solid-height"><?php echo $_smarty_tpl->tpl_vars['course']->value['info'];?>
 </p>
                     <p><!-- <a href="#" class="btn btn-primary" role="开始学习">开始学习</a>  --><a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
 " class="btn btn-info" role="开始学习">开始学习</a></p>

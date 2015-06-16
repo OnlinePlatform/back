@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var urlpdf=window.location.search.slice(1);
 console.log(urlpdf);
 var fp = new FlexPaperViewer(  
@@ -23,3 +24,12 @@ CursorToolsVisible : true,
 SearchToolsVisible : true,  
 localeChain: 'zh_CN'  
 }});  
+
+});
+(function($){
+   $('.modal').on('hide.bs.modal', function () {
+    $('video').trigger('pause');
+        // alert('hello');
+
+  });
+})(jQuery);

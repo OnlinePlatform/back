@@ -65,8 +65,8 @@
         <ul class="breadcrumb">
           <li><a href="#">个人中心</a> <span class="divider"></span></li>
           <li><a href="#">我的课程</a> <span class="divider"></span></li>
-          <li><a href="#">校内课</a> <span class="divider"></span></li>
-          <li><a href="#">C++</a></li>
+          <li><a href="#">{$course_info['type']}</a> <span class="divider"></span></li>
+          <li><a href="#">{$course_info['name']}</a></li>
         </ul>
       </div>
       <div class="row">
@@ -115,7 +115,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls >
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>
@@ -144,7 +144,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls>
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>
@@ -176,7 +176,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls>
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>
@@ -206,7 +206,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls>
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>

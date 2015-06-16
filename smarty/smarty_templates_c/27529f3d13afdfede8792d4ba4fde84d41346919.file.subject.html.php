@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-15 15:10:43
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-16 13:21:39
          compiled from ".\smarty\templates\subject.html" */ ?>
 <?php /*%%SmartyHeaderCode:13157557d817ac12026-20583986%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '27529f3d13afdfede8792d4ba4fde84d41346919' => 
     array (
       0 => '.\\smarty\\templates\\subject.html',
-      1 => 1434381040,
+      1 => 1434460897,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_557d817ad004d7_85226054',
   'variables' => 
   array (
+    'course_info' => 0,
     'course_content' => 0,
     'comment_list' => 0,
     'comments' => 0,
@@ -103,8 +104,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
           <li><a href="#">个人中心</a> <span class="divider"></span></li>
           <li><a href="#">我的课程</a> <span class="divider"></span></li>
-          <li><a href="#">校内课</a> <span class="divider"></span></li>
-          <li><a href="#">C++</a></li>
+          <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['course_info']->value['type'];?>
+</a> <span class="divider"></span></li>
+          <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['course_info']->value['name'];?>
+</a></li>
         </ul>
       </div>
       <div class="row">
@@ -181,7 +184,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls >
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
 ' type="video/mp4">
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
@@ -217,7 +220,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls>
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
 ' type="video/mp4">
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
@@ -258,7 +261,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls>
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
 ' type="video/mp4">
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
@@ -297,7 +300,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['content']['last']       = ($
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls id="video">
+                      <video class='video-style' controls>
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
 ' type="video/mp4">
                         <source src='<?php echo $_smarty_tpl->tpl_vars['course_content']->value[$_smarty_tpl->getVariable('smarty')->value['section']['content']['index']]['video_url'];?>
