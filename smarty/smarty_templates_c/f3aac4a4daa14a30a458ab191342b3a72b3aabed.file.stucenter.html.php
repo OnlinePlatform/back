@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-16 03:57:43
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-17 15:02:57
          compiled from ".\smarty\templates\stucenter.html" */ ?>
 <?php /*%%SmartyHeaderCode:3533557f9b1a8785e7-15603789%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f3aac4a4daa14a30a458ab191342b3a72b3aabed' => 
     array (
       0 => '.\\smarty\\templates\\stucenter.html',
-      1 => 1434427056,
+      1 => 1434553375,
       2 => 'file',
     ),
   ),
@@ -97,7 +97,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           <!--我的课程 Head Start-->
           <div class="col-xs-12  bg">
             <ul class="nav pull-left">
-              <li> <a href="course_display.php?"> 我的课程 </a> </li>
+              <li> <a href="course_display.php"> 我的课程 </a> </li>
             </ul>
             <p class="pull-left badge"><a href="#" data-toggle="modal" data-target="#messages" >4</a></p>
             <div class="modal fade" id="messages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -193,10 +193,6 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
               <?php }?>
               <?php } ?>
             </div>
-
-
-
-
 
 
 
@@ -814,7 +810,7 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
               <div class="update_text" id="update_text" style="display:none;">
                 <a href="#" style="cursor:pointer;"><input type="file" name="" id="" accept="image/png,image/gif,image/jpeg"> 更改头像</a>
               </div>
-              <img src="img/user.png" />
+              <img src="img/portrait.jpg" />
             </div>
             <div class="pull-right">
               <a href="#" class="opt_ico" data-toggle="modal" data-target="#edit_material">

@@ -25,11 +25,12 @@ SearchToolsVisible : true,
 localeChain: 'zh_CN'  
 }});  
 
-});
-(function($){
-   $('.modal').on('hide.bs.modal', function () {
-    $('video').trigger('pause');
-        // alert('hello');
-
-  });
-})(jQuery);
+	$('button').click(function(){
+		console.log('ssssss');
+		var myVideo=document.getElementById("video");
+		myVideo.pause();
+	});
+})
+ $(function () { $('#myModal').on('hide.bs.modal', function () {
+      alert('嘿，我听说您喜欢模态框...');})
+   });
