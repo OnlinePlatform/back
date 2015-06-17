@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-16 13:21:39
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-17 02:08:22
          compiled from ".\smarty\templates\subject.html" */ ?>
 <?php /*%%SmartyHeaderCode:13157557d817ac12026-20583986%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '27529f3d13afdfede8792d4ba4fde84d41346919' => 
     array (
       0 => '.\\smarty\\templates\\subject.html',
-      1 => 1434460897,
+      1 => 1434506901,
       2 => 'file',
     ),
   ),
@@ -102,9 +102,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="container">
       <div class="row">
         <ul class="breadcrumb">
-          <li><a href="#">个人中心</a> <span class="divider"></span></li>
-          <li><a href="#">我的课程</a> <span class="divider"></span></li>
-          <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['course_info']->value['type'];?>
+          <li><a href="student_center.php">个人中心</a> <span class="divider"></span></li>
+          <li><a href="course_display.php?">我的课程</a> <span class="divider"></span></li>
+          <li><a href="course_display.php?"><?php echo $_smarty_tpl->tpl_vars['course_info']->value['type'];?>
 </a> <span class="divider"></span></li>
           <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['course_info']->value['name'];?>
 </a></li>
@@ -118,7 +118,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </div>
             <div class="col-xs-6 col-sm-8 s-title">
               <h3>课程简介</h3>
-              <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+              <p><?php echo $_smarty_tpl->tpl_vars['course_info']->value['info'];?>
+</p>
             </div>
           </div>
           <!-- 课程详情导航条 -->

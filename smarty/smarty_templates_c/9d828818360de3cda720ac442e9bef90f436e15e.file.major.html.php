@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-16 03:42:07
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-17 02:05:18
          compiled from ".\smarty\templates\major.html" */ ?>
 <?php /*%%SmartyHeaderCode:287557d852b284c13-07339467%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9d828818360de3cda720ac442e9bef90f436e15e' => 
     array (
       0 => '.\\smarty\\templates\\major.html',
-      1 => 1434422287,
+      1 => 1434506715,
       2 => 'file',
     ),
   ),
@@ -77,7 +77,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="container">
       <div class="row">
         <ul class="breadcrumb">
-          <li><a href="#">个人中心</a> <span class="divider"></span></li>
+          <li><a href="student_center.php">个人中心</a> <span class="divider"></span></li>
           <li><a href="#">我的课程</a></li>
         </ul>
       </div>
@@ -153,7 +153,7 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['course']->key => $_smarty_tpl->tpl_vars['course']->value) {
 $_smarty_tpl->tpl_vars['course']->_loop = true;
 ?>
-              <?php if ($_smarty_tpl->tpl_vars['course']->value['type']=='计划内') {?>
+              <?php if ($_smarty_tpl->tpl_vars['course']->value['type']=='校内课') {?>
               <div class="col-sm-5 col-md-3">
                 <div class="thumbnail">
                   <a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>

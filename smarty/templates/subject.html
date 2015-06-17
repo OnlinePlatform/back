@@ -63,9 +63,9 @@
     <div class="container">
       <div class="row">
         <ul class="breadcrumb">
-          <li><a href="#">个人中心</a> <span class="divider"></span></li>
-          <li><a href="#">我的课程</a> <span class="divider"></span></li>
-          <li><a href="#">{$course_info['type']}</a> <span class="divider"></span></li>
+          <li><a href="student_center.php">个人中心</a> <span class="divider"></span></li>
+          <li><a href="course_display.php?">我的课程</a> <span class="divider"></span></li>
+          <li><a href="course_display.php?">{$course_info['type']}</a> <span class="divider"></span></li>
           <li><a href="#">{$course_info['name']}</a></li>
         </ul>
       </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="col-xs-6 col-sm-8 s-title">
               <h3>课程简介</h3>
-              <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+              <p>{$course_info['info']}</p>
             </div>
           </div>
           <!-- 课程详情导航条 -->

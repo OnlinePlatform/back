@@ -40,7 +40,7 @@
 		}
 		$smarty->assign('comment_list', $comment_list);
 
-		$sql_course = "select c.*, sci.type from course c inner join stu_course_info sci where 1=1 and 
+		$sql_course = "select c.*, sci.type, c.info from course c inner join stu_course_info sci where 1=1 and 
 					sci.course_id=c.id and sci.student_id='".$_SESSION['userid']."' and c.id='".$course_id."'";
 		$res_course = $mysqli->query($sql_course);
 		$course_info = $res_course->fetch_array(MYSQLI_ASSOC);
