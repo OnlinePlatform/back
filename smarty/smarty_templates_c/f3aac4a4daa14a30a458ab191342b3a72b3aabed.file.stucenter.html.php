@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-18 14:34:35
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-17 15:02:57
          compiled from ".\smarty\templates\stucenter.html" */ ?>
 <?php /*%%SmartyHeaderCode:3533557f9b1a8785e7-15603789%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f3aac4a4daa14a30a458ab191342b3a72b3aabed' => 
     array (
       0 => '.\\smarty\\templates\\stucenter.html',
-      1 => 1434638073,
+      1 => 1434553375,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'courses' => 0,
     'course' => 0,
-    'researches' => 0,
-    'research' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -267,27 +265,42 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
         <div class="col-xs-12 col-sm-12">
           <!--已完成项目 Body Start-->
           <div id="my_program">
-              <?php  $_smarty_tpl->tpl_vars['research'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['research']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['researches']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['smarty']->value['foreach']['loop2']['iteration']=0;
-foreach ($_from as $_smarty_tpl->tpl_vars['research']->key => $_smarty_tpl->tpl_vars['research']->value) {
-$_smarty_tpl->tpl_vars['research']->_loop = true;
- $_smarty_tpl->tpl_vars['smarty']->value['foreach']['loop2']['iteration']++;
-?>
-              <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['loop2']['iteration']<=4) {?>
             <div class="col-sm-4 col-md-3">
               <div class="thumbnail">
                 <div class="caption">
-                  <a href="#"> <h4> <?php echo $_smarty_tpl->tpl_vars['research']->value['research_name'];?>
- </h4> </a>
-                  <p> <?php echo $_smarty_tpl->tpl_vars['research']->value['research_info'];?>
- </p>
+                  <a href="#"> <h4> 线上平台 </h4> </a>
+                  <p> 一个综合学习、科研、就业的平台 </p>
                   <p> <a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
                 </div>
               </div>
             </div>
-              <?php }?>
-              <?php } ?>
+            <div class="col-sm-4 col-md-3">
+              <div class="thumbnail">
+                <div class="caption">
+                  <a href="#"> <h4> 线上平台 </h4> </a>
+                  <p> 一个综合学习、科研、就业的平台 </p>
+                  <p> <a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+              <div class="thumbnail">
+                <div class="caption">
+                  <a href="#"> <h4> 线上平台 </h4> </a>
+                  <p> 一个综合学习、科研、就业的平台 </p>
+                  <p> <a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+              <div class="thumbnail">
+                <div class="caption">
+                  <a href="#"> <h4> 线上平台 </h4> </a>
+                  <p> 一个综合学习、科研、就业的平台 </p>
+                  <p> <a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
+                </div>
+              </div>
+            </div>
           </div>
           <!--已完成项目 Body End-->
 

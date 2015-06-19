@@ -7,22 +7,7 @@
 		doDB();
 		$res_courses = $mysqli->query("call get_stu_classes('".$_SESSION['userid']."')");
 		$courses = $res_courses->fetch_all(MYSQLI_ASSOC);
-		while ($res=$mysqli->next_result()) {
-			
-		}
-		$res_courses->free();
 		$smarty->assign('courses', $courses);
-		
-		
-		$res_researches = $mysqli->query("call get_stu_research_info('".$_SESSION['userid']."')");
-		$researches = $res_researches->fetch_all(MYSQLI_ASSOC);
-				while ($res=$mysqli->next_result()) {
-			
-		}
-		$res_researches->free();
-		$smarty->assign('researches', $researches);
-		
-
 		$smarty->display('stucenter.html');
 
 	}else{
