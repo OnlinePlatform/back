@@ -16,17 +16,6 @@
     <link href="css/individual_center.css" rel="stylesheet">
   </head>
   <script src="js/individual_center.js"></script>
-  <script type="text/javascript" src="js/area.js"></script>
-  <script type="text/javascript" src="js/location.js"></script>
-  <script language="javascript" type="text/javascript" src="http://js.users.51.la/465832.js"></script>
-  <script src="js/jquery-1.11.1.js"> </script>
-  <script src="js/bootstrap.min.js"> </script>
-  <script src="js/common.js"> </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      showLocation();
-    });
-</script>
   <body>
     <!--Navigator Start-->
     <nav class="navbar navbar-fixed-top navbar-inverse">
@@ -166,22 +155,7 @@
               {/if}
               {/foreach}
             </div>
-
-
-
-
-
             <div class="hidden" id="s-part2">
-              <div class="col-sm-4 col-md-3">
-                <div class="thumbnail">
-                  <div class="caption">
-                    <a href="#"> <h4> php </h4> </a>
-                    <p> 课程码：A1243 </p>
-                    <p> 任课教师：李晓华 </p>
-                    <p> <a href="#" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-danger"> 申请失败</label></p>
-                  </div>
-                </div>
-              </div>
               <div class="col-sm-4 col-md-3">
                 <div class="thumbnail">
                   <div class="caption">
@@ -234,7 +208,7 @@
             </ul>
           </div>
           <!--科研合作 Menu End-->
-        <div class="modal fade" id="program_info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="program_info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -250,19 +224,23 @@
                     </div>
                   </div>
                 </div>
-          </div>  
+          </div> 
         <div class="col-xs-12 col-sm-12">
           <!--已完成项目 Body Start-->
           <div id="my_program">
+              {foreach from=$researches item=research name=loop2}
+              {if $smarty.foreach.loop2.iteration <= 4}
             <div class="col-sm-4 col-md-3">
               <div class="thumbnail">
                 <div class="caption">
-                  <a href="#"> <h4> 线上平台 </h4> </a>
-                  <p> 一个综合学习、科研、就业的平台 </p>
+                  <a href="#"> <h4> {$research['research_name']} </h4> </a>
+                  <p> {$research['research_info']} </p>
                   <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
                 </div>
               </div>
             </div>
+              {/if}
+              {/foreach}
           </div>
           <!--已完成项目 Body End-->
 
@@ -310,7 +288,7 @@
                 <div class="caption">
                   <a href="#"> <h4> 大数据 </h4> </a>
                   <p> 基于云平台的***分析</p>
-                  <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-warning"> 正在审核 </label></p>
+                  <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-warning"> 正在审核</label></p>
                 </div>
               </div>
             </div>
@@ -369,6 +347,39 @@
                   </div>
                 </div>
               </div>
+              <div class="col-xs-3 col-sm-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>软件工程师</h4>
+                    </a>
+                    <p>安码科技有限公司</p>
+                    <p><a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>软件工程师</h4>
+                    </a>
+                    <p>安码科技有限公司</p>
+                    <p><a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>软件工程师</h4>
+                    </a>
+                    <p>安码科技有限公司</p>
+                    <p><a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a></p>
+                  </div>
+                </div>
+              </div>
             </div>
             <!--已完成的实习 End-->
 
@@ -401,6 +412,17 @@
                       <h4>交互设计师</h4>
                     </a>
                     <p>阿里巴巴</p>
+                    <p><a href="#" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a><label class="label label-warning">正在审核</label></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>软件开发工程师</h4>
+                    </a>
+                    <p>百度</p>
                     <p><a href="#" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a><label class="label label-warning">正在审核</label></p>
                   </div>
                 </div>
@@ -539,12 +561,41 @@
                         <label class="labl" for="addr">
                           所 在 地：
                         </label>
-                        <div id="addr">
-                          <select id="loc_province" style="width:80px;"> </select>
-                          <select id="loc_city" style="width:80px;"> </select>
-                          <select id="loc_town" style="width:80px;"> </select>
-                          <input type="hidden" name="location_id" />
-                        </div>
+                        <span id="addr">
+                          <select>
+                            <option value="" selected="true" disabled="true">
+                              所在省
+                            </option>
+                            <option>
+                              北京
+                            </option>
+                            <option>
+                              山东
+                            </option>
+                          </select>
+                          <select>
+                            <option value="" selected="true" disabled="true">
+                              所在市
+                            </option>
+                            <option>
+                              烟台
+                            </option>
+                            <option>
+                              青岛
+                            </option>
+                          </select>
+                          <select>
+                            <option value="" selected="true" disabled="true">
+                              所在县/区
+                            </option>
+                            <option>
+                              莱阳
+                            </option>
+                            <option>
+                              莱州
+                            </option>
+                          </select>
+                        </span>
                       </div>
                       <div class="form-group">
                         <label class="labl" for="position">
@@ -628,5 +679,11 @@
       </div>
     </div>
     <!--Footer End-->
+    <script src="js/jquery-1.11.1.js">
+    </script>
+    <script src="js/bootstrap.min.js">
+    </script>
+    <script src="js/common.js">
+    </script>
   </body>
 </html>

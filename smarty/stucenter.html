@@ -1,32 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-06-21 04:08:33
-         compiled from ".\smarty\templates\stucenter.html" */ ?>
-<?php /*%%SmartyHeaderCode:3533557f9b1a8785e7-15603789%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    'f3aac4a4daa14a30a458ab191342b3a72b3aabed' => 
-    array (
-      0 => '.\\smarty\\templates\\stucenter.html',
-      1 => 1434859711,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '3533557f9b1a8785e7-15603789',
-  'function' => 
-  array (
-  ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_557f9b1a90cd03_73335717',
-  'variables' => 
-  array (
-    'courses' => 0,
-    'course' => 0,
-    'researches' => 0,
-    'research' => 0,
-  ),
-  'has_nocache_code' => false,
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_557f9b1a90cd03_73335717')) {function content_557f9b1a90cd03_73335717($_smarty_tpl) {?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   
   <head>
@@ -43,9 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <link href="css/common.css" rel="stylesheet">
     <link href="css/individual_center.css" rel="stylesheet">
   </head>
-  <?php echo '<script'; ?>
- src="js/individual_center.js"><?php echo '</script'; ?>
->
+  <script src="js/individual_center.js"></script>
   <body>
     <!--Navigator Start-->
     <nav class="navbar navbar-fixed-top navbar-inverse">
@@ -99,7 +69,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           <!--我的课程 Head Start-->
           <div class="col-xs-12  bg">
             <ul class="nav pull-left">
-              <li> <a href="course_display.php"> 我的课程 </a> </li>
+              <li> <a href="course_display.php?"> 我的课程 </a> </li>
             </ul>
             <p class="pull-left badge"><a href="#" data-toggle="modal" data-target="#messages" >4</a></p>
             <div class="modal fade" id="messages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -170,32 +140,41 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           <!--我的课程 Body Start-->
           <div class="col-xs-12 col-sm-12">
             <div id="s-part1">
-              <?php  $_smarty_tpl->tpl_vars['course'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['course']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['courses']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['smarty']->value['foreach']['loop1']['iteration']=0;
-foreach ($_from as $_smarty_tpl->tpl_vars['course']->key => $_smarty_tpl->tpl_vars['course']->value) {
-$_smarty_tpl->tpl_vars['course']->_loop = true;
- $_smarty_tpl->tpl_vars['smarty']->value['foreach']['loop1']['iteration']++;
-?>
-              <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['loop1']['iteration']<=4) {?>
+              {foreach from=$courses item=course name=loop1}
+              {if $smarty.foreach.loop1.iteration <= 4}
               <div class="col-sm-4 col-md-3">
                 <div class="thumbnail">
                   <div class="caption">
-                    <a href="#"> <h4> <?php echo $_smarty_tpl->tpl_vars['course']->value['name'];?>
- </h4> </a>
-                    <p> 课程码：<?php echo $_smarty_tpl->tpl_vars['course']->value['code'];?>
- </p>
-                    <p> 任课教师：<?php echo $_smarty_tpl->tpl_vars['course']->value['teacher_name'];?>
- </p>
-                    <p> <a href="course_info.php?course_id=<?php echo $_smarty_tpl->tpl_vars['course']->value['id'];?>
-" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
+                    <a href="#"> <h4> {$course['name']} </h4> </a>
+                    <p> 课程码：{$course['code']} </p>
+                    <p> 任课教师：{$course['teacher_name']} </p>
+                    <p> <a href="course_info.php?course_id={$course['id']}" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
                   </div>
                 </div>
               </div>
-              <?php }?>
-              <?php } ?>
+              {/if}
+              {/foreach}
             </div>
+
+
+
+
+
+
+
+
+
             <div class="hidden" id="s-part2">
+              <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#"> <h4> php </h4> </a>
+                    <p> 课程码：A1243 </p>
+                    <p> 任课教师：李晓华 </p>
+                    <p> <a href="#" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-danger"> 申请失败</label></p>
+                  </div>
+                </div>
+              </div>
               <div class="col-sm-4 col-md-3">
                 <div class="thumbnail">
                   <div class="caption">
@@ -248,52 +227,54 @@ $_smarty_tpl->tpl_vars['course']->_loop = true;
             </ul>
           </div>
           <!--科研合作 Menu End-->
-          <div class="modal fade" id="program_info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      项目详情
-                    </div>
-                    <div class="modal-body">
-                      本项目是有一大批985、211高校联合承办
-                    </div>
-                    <div class='modal-footer'>
-                      <a href='#' class='btn' data-dismiss='modal'>
-                        关闭
-                      </a>
-                    </div>
-                  </div>
-                </div>
-          </div> 
+          
         <div class="col-xs-12 col-sm-12">
           <!--已完成项目 Body Start-->
           <div id="my_program">
-              <?php  $_smarty_tpl->tpl_vars['research'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['research']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['researches']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
- $_smarty_tpl->tpl_vars['smarty']->value['foreach']['loop2']['iteration']=0;
-foreach ($_from as $_smarty_tpl->tpl_vars['research']->key => $_smarty_tpl->tpl_vars['research']->value) {
-$_smarty_tpl->tpl_vars['research']->_loop = true;
- $_smarty_tpl->tpl_vars['smarty']->value['foreach']['loop2']['iteration']++;
-?>
-              <?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['loop2']['iteration']<=4) {?>
+              {foreach from=$researches item=research name=loop2}
+              {if $smarty.foreach.loop2.iteration <= 4}
             <div class="col-sm-4 col-md-3">
               <div class="thumbnail">
                 <div class="caption">
-                  <a href="#"> <h4> <?php echo $_smarty_tpl->tpl_vars['research']->value['research_name'];?>
- </h4> </a>
-                  <p> <?php echo $_smarty_tpl->tpl_vars['research']->value['research_info'];?>
- </p>
-                  <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
+                  <a href="#"> <h4> {$research['research_name']} </h4> </a>
+                  <p> {$research['research_info']} </p>
+                  <p> <a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
                 </div>
               </div>
             </div>
-              <?php }?>
-              <?php } ?>
+
           </div>
           <!--已完成项目 Body End-->
 
           <!--进行中的项目 Body Start-->
           <div id="my_programing" class="hidden">
+            <div class="col-sm-4 col-md-3">
+              <div class="thumbnail">
+                <div class="caption">
+                  <a href="#"> <h4> 线上平台 </h4> </a>
+                  <p> 一个综合学习、科研、就业的平台 </p>
+                  <p> <a href="#" class="btn-sm btn-info" role="进入项目"> 进入项目 </a> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+              <div class="thumbnail">
+                <div class="caption">
+                  <a href="#"> <h4> 线上平台 </h4> </a>
+                  <p> 一个综合学习、科研、就业的平台 </p>
+                  <p> <a href="#" class="btn-sm btn-info" role="进入项目"> 进入项目 </a> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+              <div class="thumbnail">
+                <div class="caption">
+                  <a href="#"> <h4> 线上平台 </h4> </a>
+                  <p> 一个综合学习、科研、就业的平台 </p>
+                  <p> <a href="#" class="btn-sm btn-info" role="进入项目"> 进入项目 </a> </p>
+                </div>
+              </div>
+            </div>
             <div class="col-sm-4 col-md-3">
               <div class="thumbnail">
                 <div class="caption">
@@ -327,7 +308,7 @@ $_smarty_tpl->tpl_vars['research']->_loop = true;
                   </div>
                   <a href="#"> <h4> 大数据 </h4> </a>
                   <p> 基于云平台的***分析</p>
-                  <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-danger"> 申请失败</label></p>
+                  <p> <a href="#" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-danger"> 申请失败</label></p>
                 </div>
               </div>
             </div>
@@ -336,7 +317,7 @@ $_smarty_tpl->tpl_vars['research']->_loop = true;
                 <div class="caption">
                   <a href="#"> <h4> 大数据 </h4> </a>
                   <p> 基于云平台的***分析</p>
-                  <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-warning"> 正在审核</label></p>
+                  <p> <a href="#" class="btn-sm btn-info btn-margin" role="查看详情"> 查看详情 </a> <label class="label label-warning"> 正在审核 </label></p>
                 </div>
               </div>
             </div>
@@ -533,13 +514,89 @@ $_smarty_tpl->tpl_vars['research']->_loop = true;
                     <p>
                       任课教师：西西
                     </p>
-                    <p> <a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>
+                        Python
+                      </h4>
+                    </a>
+                    <p>
+                      课程码：B0po9e4
+                    </p>
+                    <p>
+                      任课教师：西西
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>
+                        Python
+                      </h4>
+                    </a>
+                    <p>
+                      课程码：B0po9e4
+                    </p>
+                    <p>
+                      任课教师：西西
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#"> <h4> Python </h4> </a>
+                    <p> 课程码：B0po9e4 </p>
+                    <p> 任课教师：西西 </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="hidden" id="opt_concern">
               <div class="col-xs-12 col-sm-12">
+                <div class="" id="opt_end">
+              <div class="col-xs-3 col-sm-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>软件工程师</h4>
+                    </a>
+                    <p>安码科技有限公司</p>
+                    <p><a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>软件工程师</h4>
+                    </a>
+                    <p>安码科技有限公司</p>
+                    <p><a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-3 col-sm-3">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <a href="#">
+                      <h4>软件工程师</h4>
+                    </a>
+                    <p>安码科技有限公司</p>
+                    <p><a href="#" class="btn-sm btn-info" role="查看详情"> 查看详情 </a></p>
+                  </div>
+                </div>
+              </div>
               <div class="col-xs-3 col-sm-3">
                 <div class="thumbnail">
                   <div class="caption">
@@ -695,7 +752,7 @@ $_smarty_tpl->tpl_vars['research']->_loop = true;
               <div class="update_text" id="update_text" style="display:none;">
                 <a href="#" style="cursor:pointer;"><input type="file" name="" id="" accept="image/png,image/gif,image/jpeg"> 更改头像</a>
               </div>
-              <img src="img/portrait.jpg" />
+              <img src="img/user.png" />
             </div>
             <div class="pull-right">
               <a href="#" class="opt_ico" data-toggle="modal" data-target="#edit_material">
@@ -727,17 +784,11 @@ $_smarty_tpl->tpl_vars['research']->_loop = true;
       </div>
     </div>
     <!--Footer End-->
-    <?php echo '<script'; ?>
- src="js/jquery-1.11.1.js">
-    <?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/bootstrap.min.js">
-    <?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/common.js">
-    <?php echo '</script'; ?>
->
+    <script src="js/jquery-1.11.1.js">
+    </script>
+    <script src="js/bootstrap.min.js">
+    </script>
+    <script src="js/common.js">
+    </script>
   </body>
-</html><?php }} ?>
+</html>
