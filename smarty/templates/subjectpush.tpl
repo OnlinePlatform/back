@@ -4,10 +4,10 @@
               <dd>
                   <a href="#" class="figure"><img src="img/user.png">
                   </a>
-                  <a href="#">{$teacher['name']}</a>
-                  <p> {$teacher['position']}</p>
+                  <a href="#">{$teachers['name']}</a>
+                  <p> {$teachers['position']}</p>
                   <br class="clear">
-                  <p class="indent" style="margin-top: 20px;">{$teacher['teacher_info']}
+                  <p class="indent" style="margin-top: 20px;">{$teachers['teacher_info']}
                     <!-- W3CPlus创始人，目前就职于手淘。对CSS3和Sass等前端脚本语言有深入的认识和丰富的实践经验。CSS3、Sass和Drupal中国布道者，2014年出版《图解CSS3：核心技术与案例实战》。 -->
                   </p>
               </dd>
@@ -28,6 +28,8 @@
                 
             </dl>
         </div>
+      </div>
+    </div>
 
 
 

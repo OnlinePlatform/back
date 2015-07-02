@@ -21,6 +21,8 @@
 		}
 		$res_researches->free();
 		$smarty->assign('researches', $researches);
+        $smarty->assign('session_username', $_SESSION['username']);
+
 		
 
 		$smarty->display('stucenter.html');

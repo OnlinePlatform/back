@@ -18,7 +18,8 @@
   <script src="js/individual_center.js"></script>
   <body>
     <!--Navigator Start-->
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+    {include file="header.tpl" session_username=$session_username}
+<!--     <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <div class="collapse navbar-collapse pull-left">
           <ul class="nav navbar-nav">
@@ -36,7 +37,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
     <!--Navigator End-->
     <div class="container">
       <!--个人中心Head Start-->
@@ -234,7 +235,7 @@
               <div class="thumbnail">
                 <div class="caption">
                   <a href="#"> <h4> {$research['research_name']} </h4> </a>
-                  <p> {$research['research_info']} </p>
+                  <p class="solidwords"> {$research['research_info']} </p>
                   <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
                 </div>
               </div>
@@ -657,7 +658,7 @@
             </div>
             
             <ul class="navbar-text nav ">
-              <li> <label for="nickname"> 昵称： </label> <span id="nickname"> 小王子 </span> </li>
+              <li> <label for="nickname"> 昵称： </label> <span id="nickname"> {$session_username} </span> </li>
               <li> <label for="position"> 职位： </label> <span id="position"> 开发工程师 </span> </li>
               <li> <label for="gender"> 性别： </label> <span id="gender"> 男 </span> </li>
               <!-- <li><label for="email">邮箱：</label><br/><span id="email">1111111@qq.com</span></li>

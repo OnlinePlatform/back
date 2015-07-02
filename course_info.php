@@ -45,7 +45,7 @@
 		$res_course = $mysqli->query($sql_course);
 		$course_info = $res_course->fetch_array(MYSQLI_ASSOC);
 		$smarty->assign('course_info', $course_info);
-		
+		$smarty->assign('session_username', $_SESSION['username']);
 		$smarty->display('subject.html');
 
 

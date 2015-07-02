@@ -7,8 +7,7 @@ $(document).ready(function(){
 			$(this).removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
 		}
 	});
-	$('.job-name').siblings().addClass('hidden').end()
-	.click(function(){
+	$('.job-name').click(function(e){
 		$(this).siblings().toggleClass('hidden');
 	});
 });

@@ -1,4 +1,3 @@
-$(document).ready(function(){
 var urlpdf=window.location.search.slice(1);
 console.log(urlpdf);
 var fp = new FlexPaperViewer(  
@@ -24,13 +23,3 @@ CursorToolsVisible : true,
 SearchToolsVisible : true,  
 localeChain: 'zh_CN'  
 }});  
-
-	$('button').click(function(){
-		console.log('ssssss');
-		var myVideo=document.getElementById("video");
-		myVideo.pause();
-	});
-})
- $(function () { $('#myModal').on('hide.bs.modal', function () {
-      alert('嘿，我听说您喜欢模态框...');})
-   });

@@ -18,5 +18,24 @@ $(function(){
     }
     hoverShow('#user');
     hoverShow('#enter');
-    console.log("1111");
+//固定字数，超出使用。。。
+{
+var maxwidth=2;
+var $solidwords=$(".solidwords");
+if($solidwords.text().length>maxwidth)
+{
+    $solidwords.text($solidwords.text().substring(0,maxwidth));
+    $solidwords.html($solidwords.html()+'…');
+}
+}
+//导航栏加样式
+{
+    var path=location.pathname;
+    var url=path.split('/')[path.split('/').length-1];
+    $('.nav li a').each(function(){
+        if ($(this).attr('href')==url) {
+            $(this).parent().addClass('current').siblings().removeClass('current');
+        };
+    })
+}
 });

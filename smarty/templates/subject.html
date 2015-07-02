@@ -31,17 +31,9 @@
   </script>
 
   <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
+   {include file="header.tpl" session_username=$session_username}
+   <!--  <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <!-- <div class="navbar-header">
-          <关注 type="关注" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </关注>
-          <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
-        </div> -->
         <div class="collapse navbar-collapse pull-left">
           <ul class="nav navbar-nav">
             <li><a href="#">首页</a></li>
@@ -58,15 +50,15 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <div class="container">
       <div class="row">
         <ul class="breadcrumb">
-          <li><a href="student_center.php">个人中心</a> <span class="divider"></span></li>
-          <li><a href="course_display.php?">我的课程</a> <span class="divider"></span></li>
-          <li><a href="course_display.php?">{$course_info['type']}</a> <span class="divider"></span></li>
-          <li><a href="#">{$course_info['name']}</a></li>
+          <li><a href="#">个人中心</a> <span class="divider"></span></li>
+          <li><a href="#">我的课程</a> <span class="divider"></span></li>
+          <li><a href="#">校内课</a> <span class="divider"></span></li>
+          <li><a href="#">C++</a></li>
         </ul>
       </div>
       <div class="row">
@@ -77,7 +69,7 @@
             </div>
             <div class="col-xs-6 col-sm-8 s-title">
               <h3>课程简介</h3>
-              <p>{$course_info['info']}</p>
+              <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
             </div>
           </div>
           <!-- 课程详情导航条 -->
@@ -115,7 +107,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls >
+                      <video class='video-style' controls id="video">
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>
@@ -144,7 +136,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls>
+                      <video class='video-style' controls id="video">
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>
@@ -176,7 +168,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls>
+                      <video class='video-style' controls id="video">
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>
@@ -206,7 +198,7 @@
                       </h4>
                     </div>
                     <div class="modal-body">
-                      <video class='video-style' controls>
+                      <video class='video-style' controls id="video">
                         <source src='{$course_content[content].video_url}' type="video/mp4">
                         <source src='{$course_content[content].video_url}' type='video/ogg'>
                         <p> 浏览器不支持该视频播放，请升级浏览器</p>
@@ -312,7 +304,8 @@
 
 
        <!--  右侧推送 -->
-        <div class="col-xs-6 col-sm-3 pull-right" style="padding: 10px;margin-top: -10px">
+      {include file="subjectpush.tpl" teachers=$teachers course=$courses}
+        <!-- <div class="col-xs-6 col-sm-3 pull-right" style="padding: 10px;margin-top: -10px">
             <dl>
               <dt>授课老师</dt>
               <dd>
@@ -342,8 +335,10 @@
             </dl>
         </div>
       </div>
-    </div>
-    <div class="footer">
+    </div> -->  
+      
+     {include file="footer.tpl"}
+     <!--  <div class="footer">
         <div class="footer-text">
             <p>
                 <span>关于我们</span>
@@ -357,7 +352,7 @@
             </p>
         </div>
     </div>
-  </div>
+  </div> -->
           <!-- response modal -->
   <div class="modal fade" id="response" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
