@@ -15,32 +15,7 @@
     <link href="css/common.css" rel="stylesheet">
     <link href="css/individual_center.css" rel="stylesheet">
   </head>
-  <script src="js/individual_center.js"></script>
-  <script type="text/javascript" src="js/area.js"></script>
-  <script type="text/javascript" src="js/location.js"></script>
-  <script src="js/jquery-1.11.1.js"> </script>
-  <script src="js/bootstrap.min.js"> </script>
-  <script src="js/common.js"> </script>
-  <script type="text/javascript">
-  function show_msglist(){
-      document.getElementById("course").classList.remove("s-chosen");
-      document.getElementById("course").classList.add("hidden");
-      document.getElementById("messages").classList.remove("hidden");
-      var left_a=document.getElementById("left_nav").getElementsByTagName("a");
-      for (var i = 0; i < left_a.length; i++) {
-        if (left_a[i].getAttribute("href")=="#course") {
-          left_a[i].classList.remove("s-chosen");
-        }
-        if(left_a[i].getAttribute("href")=="#messages"){
-          left_a[i].classList.add("s-chosen");
-        }
-      };
-    }
-    window.onload=function(){showLocation();};
-    /*$(document).ready(function() {
-      showLocation();
-    });
-*/</script>
+
 <style type="text/css">
   a:target{
     padding-top: 100px;
@@ -249,20 +224,20 @@
               <!--我的课程 Body Start-->
               <div class="col-xs-12 col-sm-12">
                 <div id="s-part1">
-                {foreach from=$courses item=course name=loop1}
-              {if $smarty.foreach.loop1.iteration <= 4}
+                  {foreach from=$courses item=course name=loop1}
+                  {if $smarty.foreach.loop1.iteration <= 4}
                   <div class="col-sm-4 col-md-3">
                     <div class="thumbnail">
                       <div class="caption">
-                        <a href="#"> <h4> {$course['name']}</h4> </a>
-                        <p>  课程码：{$course['code']} </p>
-                        <p>任课教师：{$course['teacher_name']}  </p>
+                        <a href="#"> <h4> {$course['name']} </h4> </a>
+                        <p> 课程码：{$course['code']} </p>
+                        <p> 任课教师：{$course['teacher_name']} </p>
                         <p> <a href="course_info.php?course_id={$course['id']}" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
                       </div>
                     </div>
                   </div>
                   {/if}
-              {/foreach}
+                  {/foreach}
                 </div>
                 <div class="hidden" id="s-part2">
                   <div class="col-sm-4 col-md-3">
@@ -345,18 +320,18 @@
                 <!--已完成项目 Body Start-->
                 <div id="my_program">
                  {foreach from=$researches item=research name=loop2}
-              {if $smarty.foreach.loop2.iteration <= 4}
+                  {if $smarty.foreach.loop2.iteration <= 4}
                   <div class="col-sm-4 col-md-3">
                     <div class="thumbnail">
                       <div class="caption">
                         <a href="#"> <h4> {$research['research_name']} </h4> </a>
-                  <p class="solidwords"> {$research['research_info']} </p>
-                  <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
+                        <p class="solidwords"> {$research['research_info']} </p>
+                        <p> <a href="#program_info" data-toggle="modal" class="btn-sm btn-info" role="查看详情"> 查看详情 </a> </p>
                       </div>
                     </div>
                   </div>
                   {/if}
-              {/foreach}
+                  {/foreach}
                 </div>
                 <!--已完成项目 Body End-->
 
@@ -628,5 +603,31 @@
         </div>
       </div>
     </div>
+      <script src="js/individual_center.js"></script>
+  <script type="text/javascript" src="js/area.js"></script>
+  <script type="text/javascript" src="js/location.js"></script>
+  <script src="js/jquery-1.11.1.js"> </script>
+  <script src="js/bootstrap.min.js"> </script>
+  <script src="js/common.js"> </script>
+  <script type="text/javascript">
+  function show_msglist(){
+      document.getElementById("course").classList.remove("s-chosen");
+      document.getElementById("course").classList.add("hidden");
+      document.getElementById("messages").classList.remove("hidden");
+      var left_a=document.getElementById("left_nav").getElementsByTagName("a");
+      for (var i = 0; i < left_a.length; i++) {
+        if (left_a[i].getAttribute("href")=="#course") {
+          left_a[i].classList.remove("s-chosen");
+        }
+        if(left_a[i].getAttribute("href")=="#messages"){
+          left_a[i].classList.add("s-chosen");
+        }
+      };
+    }
+    window.onload=function(){showLocation();};
+    /*$(document).ready(function() {
+      showLocation();
+    });
+*/</script>
   </body>
 </html>
