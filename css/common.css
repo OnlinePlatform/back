@@ -73,9 +73,8 @@ body {
     border-bottom: 2px solid #A5A5A5;
 }
 .clear{clear: both;}
-.navbar-nav>li.current a{
-  color: white;
-  background: url(../img/nav_sj.png) bottom center no-repeat;
+.active{
+	background-color: #337AB7;
 }
 .horizon{
 	border-bottom: 2px solid #A5A5A5;
@@ -141,7 +140,7 @@ ol li{
   padding: 0 10px 0 10px;
   position: absolute;
   top: 50px;
-  right: -20px;
+  right: 80px;
   border:1px solid #eee;
   background: white;
   width: 85px;
@@ -178,7 +177,4 @@ ol li{
 #s-nav li{
   margin-right: 5px;
   margin-left: 5px;
-}
-#user{
-  position: relative;
 }
